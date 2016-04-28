@@ -32,6 +32,9 @@
     - vcsh
     - rofi
     - compton
+    - vlc
+    - gimp
+    - inkscape
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
