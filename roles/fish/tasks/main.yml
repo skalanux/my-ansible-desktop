@@ -1,0 +1,4 @@
+---
+
+- name: put_fish_as_default_shell
+  user: name=ska shell=/usr/bin/fish

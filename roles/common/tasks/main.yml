@@ -32,3 +32,8 @@
     - vcsh
     - rofi
     - compton
+
+- name: Package | Install lists packages
+  pip: name={{ item }} state=present
+  with_items:
+    - powerline-status
