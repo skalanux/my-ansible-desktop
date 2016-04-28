@@ -1,0 +1,34 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Linux | Update cache
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Linux | Upgrade
+  apt: upgrade=dist
+
+- name: Package | Install lists packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - openssh-server
+    - vim
+    - git
+    - git-core
+    - git-flow
+    - fish
+    - curl
+    - wget
+    - htop
+    - ccze
+    - tmux
+    - terminator
+    - tig
+    - unzip
+    - tar
+    - gzip
+    - bzip2
+    - mc
+    - mr
+    - vcsh
+    - rofi
+    - compton

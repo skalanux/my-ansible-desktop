@@ -1,0 +1,9 @@
+---
+#- name: Clone dotfile repo
+#  sudo: false
+#  shell: vcsh clone git://github.com/skalanux/mr.git mr
+
+
+- name: Update group of dotfiles
+  sudo: false
+  command: mr up chdir="{{ local_home }}"

@@ -1,0 +1,17 @@
+##
+# Ansible playbook for setting up a LAMP development server on Ubuntu 14.04.
+#
+
+---
+
+- hosts: local
+  user: ska
+  sudo: yes
+
+  vars_files:
+    - group_vars/all.yml
+
+  roles:
+    - common       # List of essential packages
+    - dotfiles
+    #- vim          # Configuration for vim
