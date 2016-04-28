@@ -9,9 +9,10 @@
   sudo: yes
 
   vars_files:
-    - group_vars/all.yml
+    - group_vars/secretvars.yml
 
   roles:
     - common       # List of essential packages
     - dotfiles
+    - ssh
     #- vim          # Configuration for vim

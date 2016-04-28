@@ -9,6 +9,6 @@ Install Ansible :
 
 And execute command :
 
-    $ ansible-playbook -i hosts site.yml -c local -K
+    $ ansible-playbook -i hosts site.yml -c local -K --ask-vault-pass
 
 

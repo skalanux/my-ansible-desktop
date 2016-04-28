@@ -1,0 +1,8 @@
+---
+- name: Create ssh directory
+  sudo: false
+  file: path={{ local_home }}/.ssh state=directory mode=0700
+
+- name: Load ssh configuration
+  sudo: false
+  copy: content="{{ private_ssl_key }}" dest={{ local_home }}/.ssh/id_rsa mode=0700
