@@ -35,6 +35,7 @@
     - vlc
     - gimp
     - inkscape
+    - pcmanfm
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
