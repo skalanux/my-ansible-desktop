@@ -8,6 +8,7 @@
     - group_vars/secretvars.yml
 
   roles:
+    - { role: angstwad.docker_ubuntu, docker_group_members: ["ska"], docker_opts: '-g /data/docker --insecure-registry registry.dev-tools.msgc.gcba' }
     - common
     - dotfiles
     - ssh
