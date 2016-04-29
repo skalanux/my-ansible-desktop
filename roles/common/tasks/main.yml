@@ -36,6 +36,7 @@
     - gimp
     - inkscape
     - pcmanfm
+    - gnome-tweak-tool
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
