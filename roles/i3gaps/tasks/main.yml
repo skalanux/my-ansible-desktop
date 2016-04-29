@@ -1,0 +1,38 @@
+---
+- name: Update i3gaps code
+  sudo: false
+  git: repo=https://github.com/Airblader/i3.git dest=/tmp/i3gaps update=no
+
+- name: Install i3gaps dependencies
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - libxcb1-dev
+    - libxcb-keysyms1-dev
+    - libpango1.0-dev
+    - libxcb-util0-dev
+    - libxcb-icccm4-dev
+    - libyajl-dev
+    - libstartup-notification0-dev
+    - libxcb-randr0-dev
+    - libev-dev
+    - libxcb-cursor-dev
+    - libxcb-xinerama0-dev
+    - libxcb-xkb-dev
+    - libxkbcommon-dev
+    - libxkbcommon-x11-dev
+    - libxcb-ewmh-dev
+
+- name: Compile i3gaps
+  sudo: false
+  command: make chdir="/tmp/i3gaps"
+
+- name: Install i3gaps
+  command: make install chdir="/tmp/i3gaps"
+
+- name: Update xtitle code
+  sudo: false
+  git: repo=https://github.com/baskerville/xtitle.git dest=/tmp/xtitle update=no
+
+- name: Install xtitle
+  command: make install chdir="/tmp/xtitle"
+
