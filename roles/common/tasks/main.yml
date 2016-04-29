@@ -10,6 +10,7 @@
 - name: Package | Install lists packages
   apt: pkg={{ item }} state=installed
   with_items:
+    - consolekit
     - openssh-server
     - vim
     - git
