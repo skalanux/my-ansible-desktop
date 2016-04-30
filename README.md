@@ -6,7 +6,7 @@ Install Ansible :
 
     $ sudo apt-get install -y -qq python python-pip
     $ sudo pip install ansible
-    $ ansible-galaxy install angstwad.docker_ubuntu
+    $ sudo ansible-galaxy install angstwad.docker_ubuntu
 
 And execute command :
 
