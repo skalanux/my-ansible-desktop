@@ -37,7 +37,10 @@
     - inkscape
     - pcmanfm
     - gnome-tweak-tool
-
+    - scrot
+    - i3lock
+    - consolekit
+        
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
   with_items:
