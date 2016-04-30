@@ -10,7 +10,6 @@
 - name: Package | Install lists packages
   apt: pkg={{ item }} state=installed
   with_items:
-    - consolekit
     - openssh-server
     - vim
     - git
@@ -41,7 +40,7 @@
     - scrot
     - i3lock
     - consolekit
-        
+
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
   with_items:
