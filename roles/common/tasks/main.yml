@@ -40,6 +40,7 @@
     - scrot
     - i3lock
     - consolekit
+    - arandr
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
