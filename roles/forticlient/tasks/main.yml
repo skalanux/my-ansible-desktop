@@ -1,0 +1,19 @@
+- name: Check if fortinet is installed
+  command: dpkg-query -W forticlient-sslvpn
+  register: fortinet_check_deb
+  failed_when: fortinet_check_deb.rc > 1
+  changed_when: fortinet_check_deb.rc == 1
+
+- name: Download fortinet
+  get_url:
+    url="https://hadler.me/files/forticlient-sslvpn_4.4.2323-1_amd64.deb"
+    dest="/tmp/forticlient.deb"
+  when: fortinet_check_deb.rc == 1
+
+- name: Install fortinet
+  apt: deb="/tmp/forticlient.deb" update_cache=yes
+  sudo: true
+  when: fortinet_check_deb.rc == 1
+
+- name: Create miniconnect command
+  copy: content="#!/bin/bash\n{{ miniconnect }}" dest=/usr/local/bin/miniconnect mode=0777
