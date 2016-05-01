@@ -47,3 +47,4 @@
   with_items:
     - powerline-status
     - subliminal
+    - docker-compose
