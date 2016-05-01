@@ -1,0 +1,24 @@
+---
+- name: Add nvim repo
+  apt_repository: repo='ppa:neovim-ppa/unstable'
+
+- name: Package | Install plugin dependencies
+  pip: name={{ item }} state=present
+  with_items:
+    - rope
+    - isort
+    - pep8
+    - neovim
+
+- name: Package | Install lists packages
+  apt: pkg=neovim state=installed
+
+- name: Create nvim bundle directory
+  sudo: false
+  file: path={{ local_home }}/.config/nvim/bundle state=directory
+
+- name: Download and install Vundle module
+  git:  repo=https://github.com/VundleVim/Vundle.vim.git dest={{ local_home }}/.config/nvim/bundle/Vundle.vim
+
+- name: Update nvim plugins
+  command: nvim +PluginInstall +q
