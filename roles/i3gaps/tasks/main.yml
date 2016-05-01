@@ -33,6 +33,10 @@
   sudo: false
   git: repo=https://github.com/baskerville/xtitle.git dest=/tmp/xtitle update=no
 
+- name: make xtitle
+  sudo: false
+  command: make chdir="/tmp/xtitle"
+
 - name: Install xtitle
-  command: make install chdir="/tmp/xtitle"
+  command: cp -f /tmp/xtitle/xtitle /usr/local/bin/xtitle
 
