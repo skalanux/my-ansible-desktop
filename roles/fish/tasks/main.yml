@@ -14,4 +14,13 @@
 # sudo: false
 # command: omf theme devecoop
 
+- name: checkout fzf
+  git: depth=1 repo=https://github.com/junegunn/fzf.git dest={{ local_home }}/.fzf
+  register: checkouted_fzf
+
+- name: install fzf
+  command: yes | {{ local_home }}/.fzf/install
+  when: checkouted_fzf.changed
+
+
 
