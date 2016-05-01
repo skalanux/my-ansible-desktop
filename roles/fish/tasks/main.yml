@@ -2,3 +2,16 @@
 
 - name: put_fish_as_default_shell
   user: name=ska shell=/usr/bin/fish
+
+- name: install omf
+  command: curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+
+- name: checkout devecoop theme
+  sudo: false
+  git: repo=https://github.com/skalanux/fish-theme-devecoop.git dest={{ local_home }}/.local/share/omf/themes/devecoop
+
+# - name: activate devecoop theme
+# sudo: false
+# command: omf theme devecoop
+
+
