@@ -41,6 +41,7 @@
     - consolekit
     - arandr
     - yate-qt4
+    - acpi
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
