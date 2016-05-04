@@ -40,3 +40,11 @@
 - name: Install xtitle
   command: cp -f /tmp/xtitle/xtitle /usr/local/bin/xtitle
 
+- name: Download and install Super Flat Remix iconset
+  unarchive: src=https://github.com/daniruiz/Super-Flat-Remix/archive/master.zip dest=/tmp copy=no
+  register: downloadiconset
+
+# Use synchronize instead of copy because there are a lot of files
+- name: Install SuperFlatRemix iconset
+  synchronize: src="/tmp/Super-Flat-Remix-master/Super Flat Remix" dest=/usr/share/icons
+
