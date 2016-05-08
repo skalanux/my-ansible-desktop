@@ -41,6 +41,8 @@
     - consolekit
     - arandr
     - yate-qt4
+    - acpi
+    - nitrogen
 
 - name: Package | Install lists packages
   pip: name={{ item }} state=present
