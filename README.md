@@ -4,7 +4,7 @@ Installation of my boxes using ansible
 
 Install Ansible :
 
-    $ sudo apt-get install -y -qq python python-pip
+    $ sudo apt-get install -y -qq python python-pip libssl-dev libffi-dev
     $ sudo pip install ansible
     $ sudo ansible-galaxy install angstwad.docker_ubuntu
 
