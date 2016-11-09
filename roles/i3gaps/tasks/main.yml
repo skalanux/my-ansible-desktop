@@ -1,7 +1,7 @@
 ---
 - name: Update i3gaps code
   sudo: false
-  git: repo=https://github.com/Airblader/i3.git dest=/tmp/i3gaps update=no
+  git: repo=https://github.com/Airblader/i3.git version=d03b96b3698610110 dest=/tmp/i3gaps update=no
 
 - name: Install i3gaps dependencies
   apt: pkg={{ item }} state=installed
